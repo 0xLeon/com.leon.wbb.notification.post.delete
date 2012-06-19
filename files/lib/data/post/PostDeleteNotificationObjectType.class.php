@@ -49,8 +49,8 @@ class PostDeleteNotificationObjectType extends AbstractNotificationObjectType {
 	public function getObjectsByIDArray($objectIDArray) {
 		$posts = array();
 		$sql = "SELECT		*
-			FROM 		wcf".WCF_N."_user_guestbook
-			WHERE 		postID IN (".implode(',', $objectIDArray).")";
+			FROM		wbb".WBB_N."_post
+			WHERE		postID IN (".implode(',', $objectIDArray).")";
 		$result = WCF::getDB()->sendQuery($sql);
 		while ($row = WCF::getDB()->fetchArray($result)) {
 			$posts[$row['postID']] = new PostDeleteNotificationObject(null, $row);
