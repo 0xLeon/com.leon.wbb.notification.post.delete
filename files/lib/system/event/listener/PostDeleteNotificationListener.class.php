@@ -27,7 +27,7 @@ class PostDeleteNotificationListener implements EventListener {
 				NotificationHandler::fireEvent('trashed', 'postDelete', $eventObj->post->postID, $eventObj->post->userID);
 			}
 			else if ($eventObj->action === 'delete') {
-				if (!$eventObj->board->checkModeratorPermission('canDeletePostCompletely')) {
+				if (!$eventObj->board->getModeratorPermission('canDeletePostCompletely')) {
 					return;
 				}
 				
@@ -37,7 +37,7 @@ class PostDeleteNotificationListener implements EventListener {
 				
 			}
 			else if ($eventObj->action === 'recover') {
-				if (!$eventObj->board->checkModeratorPermission('canDeletePostCompletely') || !$eventObj->post->isDeleted) {
+				if (!$eventObj->board->getModeratorPermission('canDeletePostCompletely') || !$eventObj->post->isDeleted) {
 					return;
 				}
 				
