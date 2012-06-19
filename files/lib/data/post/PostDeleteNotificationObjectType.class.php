@@ -30,7 +30,13 @@ class PostDeleteNotificationObjectType extends AbstractNotificationObjectType {
          * @see NotificationObjectType::getObjectByObject()
          */
         public function getObjectByObject($object) {
-                $post = new PostDeleteNotificationObject($object->postID);
+		if ($object instanceof PostDeleteNotificationObject) {
+			$post = $object;
+		}
+		else {
+			$post = new PostDeleteNotificationObject($object->postID);
+		}
+		
                 if (!$post->postID) return null;
 		
                 // return object
