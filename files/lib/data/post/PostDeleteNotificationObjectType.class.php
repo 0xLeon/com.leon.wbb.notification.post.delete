@@ -30,8 +30,7 @@ class PostDeleteNotificationObjectType extends AbstractNotificationObjectType {
          * @see NotificationObjectType::getObjectByObject()
          */
         public function getObjectByObject($object) {
-                // build object using its data array
-                $post = new PostDeleteNotificationObject(null, $object);
+                $post = new PostDeleteNotificationObject($object->postID);
                 if (!$post->postID) return null;
 		
                 // return object
@@ -58,6 +57,6 @@ class PostDeleteNotificationObjectType extends AbstractNotificationObjectType {
          * @see NotificationObjectType::getPackageID()
          */
         public function getPackageID() {
-                return WCF::getPackageID('com.woltlab.wbb');
+                return PACKAGE_ID;
         }
 }
