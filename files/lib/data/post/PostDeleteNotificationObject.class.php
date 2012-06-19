@@ -14,12 +14,12 @@ require_once(WBB_DIR.'lib/data/post/ViewablePost.class.php');
  * @category 	Burning Board
  */
 class PostDeleteNotificationObject extends ViewablePost implements NotificationObject {
-	 /**
+	/**
 	 * @see NotificationObject::getObjectID()
 	 */
 	public function getObjectID() {
-                return $this->postID;
-        }
+		return $this->postID;
+	}
 	
 	/**
 	 * @see NotificationObject::getTitle()
@@ -34,8 +34,8 @@ class PostDeleteNotificationObject extends ViewablePost implements NotificationO
 	public function getURL() {
 		return 'index.php?page=Thread&postID='+$this->getObjectID()+SID_ARG_2ND+'#post'+$this->getObjectID();
 	}
-
-        /**
+	
+	/**
 	 * @see NotificationObject::getIcon()
 	 */
 	public function getIcon() {

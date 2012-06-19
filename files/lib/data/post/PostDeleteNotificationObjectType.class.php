@@ -14,22 +14,22 @@ require_once(WBB_DIR.'lib/data/post/PostDeleteNotificationObject.class.php');
  * @category 	Burning Board
  */
 class PostDeleteNotificationObjectType extends AbstractNotificationObjectType {
-	 /**
-         * @see NotificationObjectType::getObjectByID()
-         */
-        public function getObjectByID($objectID) {
-                // get object
-                $post = new PostDeleteNotificationObject($objectID);
-                if (!$post->postID) return null;
-
-                // return object
-                return $post;
-        }
+	/**
+	 * @see NotificationObjectType::getObjectByID()
+	 */
+	public function getObjectByID($objectID) {
+		// get object
+		$post = new PostDeleteNotificationObject($objectID);
+		if (!$post->postID) return null;
+		
+		// return object
+		return $post;
+	}
 	
 	/**
-         * @see NotificationObjectType::getObjectByObject()
-         */
-        public function getObjectByObject($object) {
+	 * @see NotificationObjectType::getObjectByObject()
+	 */
+	public function getObjectByObject($object) {
 		if ($object instanceof PostDeleteNotificationObject) {
 			$post = $object;
 		}
@@ -37,32 +37,32 @@ class PostDeleteNotificationObjectType extends AbstractNotificationObjectType {
 			$post = new PostDeleteNotificationObject($object->postID);
 		}
 		
-                if (!$post->postID) return null;
+		if (!$post->postID) return null;
 		
-                // return object
-                return $post;
-        }
+		// return object
+		return $post;
+	}
 	
 	/**
-         * @see NotificationObjectType::getObjectsByIDArray()
-         */
-        public function getObjectsByIDArray($objectIDArray) {
-                $posts = array();
-                $sql = "SELECT		*
+	 * @see NotificationObjectType::getObjectsByIDArray()
+	 */
+	public function getObjectsByIDArray($objectIDArray) {
+		$posts = array();
+		$sql = "SELECT		*
 			FROM 		wcf".WCF_N."_user_guestbook
 			WHERE 		postID IN (".implode(',', $objectIDArray).")";
-                $result = WCF::getDB()->sendQuery($sql);
-                while ($row = WCF::getDB()->fetchArray($result)) {
-                        $posts[$row['postID']] = new PostDeleteNotificationObject(null, $row);
-                }
+		$result = WCF::getDB()->sendQuery($sql);
+		while ($row = WCF::getDB()->fetchArray($result)) {
+			$posts[$row['postID']] = new PostDeleteNotificationObject(null, $row);
+		}
 		
-                return $posts;
-        }
+		return $posts;
+	}
 	
 	/**
-         * @see NotificationObjectType::getPackageID()
-         */
-        public function getPackageID() {
-                return PACKAGE_ID;
-        }
+	 * @see NotificationObjectType::getPackageID()
+	 */
+	public function getPackageID() {
+		return PACKAGE_ID;
+	}
 }

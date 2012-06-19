@@ -15,10 +15,10 @@ require_once(WCF_DIR.'lib/data/user/notification/NotificationHandler.class.php')
  */
 class PostDeleteNotificationListener implements EventListener {
 	/**
-         * @see EventListener::execute()
-         */
-        public function execute($eventObj, $className, $eventName) {
-                if (MODULE_USER_NOTIFICATION && ($eventObj->post !== null)) {
+	 * @see EventListener::execute()
+	 */
+	public function execute($eventObj, $className, $eventName) {
+		if (MODULE_USER_NOTIFICATION && ($eventObj->post !== null)) {
 			if ($eventObj->action === 'trash') {
 				if (!THREAD_ENABLE_RECYCLE_BIN || !$eventObj->board->getModeratorPermission('canDeletePost') || $eventObj->post->isDeleted) {
 					return;
