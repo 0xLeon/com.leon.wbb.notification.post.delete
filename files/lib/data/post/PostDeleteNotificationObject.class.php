@@ -25,20 +25,52 @@ class PostDeleteNotificationObject extends ViewablePost implements NotificationO
 	 * @see NotificationObject::getTitle()
 	 */
 	public function getTitle() {
-		// return $this->getExcerpt();
+		$message = $this->getFormattedMessage('text/plain');
+		$message = StringUtil::stripHTML($message);
+		$message = StringUtil::trim($message);
+		
+		if (StringUtil::length($message) > 100) {
+			$message = StringUtil::substring($message, 0, 97) . '...';
+		}
+		
+		if (empty($message)) {
+			$message = '#'.$this->entryID;
+		}
+		
+		return $message;
 	}
 	
 	/**
 	 * @see NotificationObject::getURL()
 	 */
 	public function getURL() {
-		return 'index.php?page=Thread&postID='+$this->getObjectID()+SID_ARG_2ND+'#post'+$this->getObjectID();
+		return 'index.php?page=Thread&postID='.$this->postID.'#post'.$this->postID;
 	}
 	
 	/**
 	 * @see NotificationObject::getIcon()
 	 */
 	public function getIcon() {
-		return 'guestbook';
+		return 'postTrash';
+	}
+	
+	/**
+	 * @see ViewablePost::getFormattedMessage()
+	 */
+	public function getFormattedMessage($outputType = 'text/html') {
+		if ($outputType === 'text/html') {
+			return parent::getFormattedMessage();
+		}
+		
+                if ($outputType == 'text/plain') {
+			$message = StringUtil::stripHTML($this->message);
+		}
+                else {
+			$message = $this->message;
+		}
+		
+		require_once(WCF_DIR.'lib/data/message/bbcode/MessageParser.class.php');
+		MessageParser::getInstance()->setOutputType($outputType);
+		return MessageParser::getInstance()->parse($message, $this->enableSmilies, $this->enableHtml, $this->enableBBCodes, false);
 	}
 }
