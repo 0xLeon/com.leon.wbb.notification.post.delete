@@ -1,6 +1,8 @@
 <?php
 // wcf imports
 require_once(WCF_DIR.'lib/data/user/notification/object/NotificationObject.class.php');
+
+// wbb imports
 require_once(WBB_DIR.'lib/data/post/ViewablePost.class.php');
 
 /**
