@@ -7,5 +7,11 @@
 			<listenerclassfile>lib/system/event/listener/PostDeleteNotificationListener.class.php</listenerclassfile>
 			<environment>user</environment>
 		</eventlistener>
+		<eventlistener>
+			<eventclassname>ThreadPage</eventclassname>
+			<eventname>show</eventname>
+			<listenerclassfile>lib/system/event/listener/PostDeleteNotificationListener.class.php</listenerclassfile>
+			<environment>user</environment>
+		</eventlistener>
 	</import>
 </data>
