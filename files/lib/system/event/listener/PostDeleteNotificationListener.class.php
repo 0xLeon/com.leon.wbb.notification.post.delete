@@ -36,6 +36,7 @@ class PostDeleteNotificationListener implements EventListener {
 						NotificationHandler::fireEvent('trashed', 'postDelete', $eventObj->post->postID, $eventObj->post->userID, array(
 							'trashedByUserID' => WCF::getUser()->userID,
 							'trashedByUsername' => WCF::getUser()->username,
+							'trashReason' -> $eventObj->reason,
 							'threadID' => $eventObj->thread->threadID,
 							'threadTopic' => $eventObj->thread->topic
 						));
@@ -111,6 +112,7 @@ class PostDeleteNotificationListener implements EventListener {
 							NotificationHandler::fireEvent('trashed', 'postDelete', $trashPost, $trashPost->userID, array(
 								'trashedByUserID' => WCF::getUser()->userID,
 								'trashedByUsername' => WCF::getUser()->username,
+								'trashReason' -> $eventObj->reason,
 								'threadID' => $trashPost->threadID,
 								'threadTopic' => $trashPost->topic
 							));
