@@ -17,7 +17,7 @@ einer deiner Beitrage im Thema {@$event->additionalData.threadTopic} wurde vom B
 
 Mit diesem Link gelangst du direkt zum gelöschten Beitrag: {@$pageURL}{@$event->getObject()->getURL()}]]></item>
 		<item name="wbb.postEdit.notification.trashed.pm"><![CDATA[Hallo {@$user->username},
-einer deiner [url='{@$pageURL}{@$event->getObject()->getURL()}']Beitrage[/url] im Thema [url='{@$pageURL}/index.php?page=Thread&threadID={@$event->additionalData.threadID}']{@$event->additionalData.threadTopic}[/url] wurde vom Benutzer [url='{@$pageURL}/index.php?page=User&userID={$event->additionalData.trashedByUserID}']{@$event->additionalData.trashedByUsername}[/url] gelöscht.
+dein [url='{@$pageURL}{@$event->getObject()->getURL()}']Beitrag[/url] im Thema [url='{@$pageURL}/index.php?page=Thread&threadID={@$event->additionalData.threadID}']{@$event->additionalData.threadTopic}[/url] wurde vom Benutzer [url='{@$pageURL}/index.php?page=User&userID={$event->additionalData.trashedByUserID}']{@$event->additionalData.trashedByUsername}[/url] gelöscht.
 {if $event->additionalData.trashReason != ''}Der Grund für die Löschung lautet: {@$event->additionalData.trashReason}{/if}]]></item>
 		<item name="wbb.postEdit.notification.deleted"><![CDATA[Einer deiner Beiträge im Thema <a href="index.php?page=Thread&amp;threadID={@$event->additionalData.threadID}{@SID_ARG_2ND}">{$event->additionalData.threadTopic}</a> wurde vom Benutzer <a href="index.php?page=User&amp;userID={@$event->additionalData.deletedByUserID}{@SID_ARG_2ND}">{$event->additionalData.deletedByUsername}</a> endgültig gelöscht.]]></item>
 		<item name="wbb.postEdit.notification.deleted.accept"><![CDATA[Bestätigen]]></item>
