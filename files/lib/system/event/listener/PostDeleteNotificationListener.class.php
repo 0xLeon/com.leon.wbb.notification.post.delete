@@ -169,6 +169,30 @@ class PostDeleteNotificationListener implements EventListener {
 					$user->removeOutstandingNotification($packageID, $count);
 				}
 			}
+			else if (($className === 'PostEditForm') && isset($_POST['deletePost']) && isset($_POST['sure'])) {
+				if ($eventObj->post->isDeleted && $eventObj->board->getModeratorPermission('canDeletePostCompletely')) {
+					NotificationHandler::revokeEvent(array('trashed'), 'postDelete', $eventObj->post->postID);
+					NotificationHandler::fireEvent('deleted', 'postDelete', $eventObj->post->postID, $eventObj->post->userID, array(
+						'deletedByUserID' => WCF::getUser()->userID,
+						'deletedByUsername' => WCF::getUser()->username,
+						'threadID' => $eventObj->thread->threadID,
+						'threadTopic' => $eventObj->thread->topic
+					));
+					
+					return true;
+				}
+				else if (!$eventObj->post->isDeleted && THREAD_ENABLE_RECYCLE_BIN && $eventObj->board->getModeratorPermission('canDeletePost')) {
+					NotificationHandler::fireEvent('trashed', 'postDelete', $eventObj->post->postID, $eventObj->post->userID, array(
+						'trashedByUserID' => WCF::getUser()->userID,
+						'trashedByUsername' => WCF::getUser()->username,
+						'trashReason' => $eventObj->deleteReason,
+						'threadID' => $eventObj->thread->threadID,
+						'threadTopic' => $eventObj->thread->topic
+					));
+					
+					return true;
+				}
+			}
 		}
 	}
 }

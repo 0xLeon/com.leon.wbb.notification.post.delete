@@ -13,5 +13,11 @@
 			<listenerclassfile>lib/system/event/listener/PostDeleteNotificationListener.class.php</listenerclassfile>
 			<environment>user</environment>
 		</eventlistener>
+		<eventlistener>
+			<eventclassname>PostEditForm</eventclassname>
+			<eventname>submit</eventname>
+			<listenerclassfile>lib/system/event/listener/PostDeleteNotificationListener.class.php</listenerclassfile>
+			<environment>user</environment>
+		</eventlistener>
 	</import>
 </data>
