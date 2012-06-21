@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com/XSD/language.xsd" languagecode="en">
+	<category name="wcf.user.notification">
+		<item name="wcf.user.notification.object.type.postDelete"><![CDATA[Post deletions]]></item>                
+	</category>
+	<category name="wbb.postEdit">
+		<item name="wbb.postEdit.notification.trashed"><![CDATA[Your <a href="{@$event->getObject()->getURL()}{@SID_ARG_2ND}">post</a> in thread <a href="index.php?page=Thread&amp;threadID={@$event->additionalData.threadID}{@SID_ARG_2ND}">{$event->additionalData.threadTopic}</a> has been deleted by user <a href="index.php?page=User&amp;userID={@$event->additionalData.trashedByUserID}{@SID_ARG_2ND}">{$event->additionalData.trashedByUsername}</a>.]]></item>
+		<item name="wbb.postEdit.notification.trashed.accept"><![CDATA[Confirm]]></item>
+		<item name="wbb.postEdit.notification.trashed.title"><![CDATA[Post deleted]]></item>
+		<item name="wbb.postEdit.notification.trashed.description"><![CDATA[You will receive a notification if someone deletes one of your posts.]]></item>
+		<item name="wbb.postEdit.notification.trashed.short"><![CDATA[<a href="{@$event->getObject()->getURL()}{@SID_ARG_2ND}">Post</a> deleted by <a href="index.php?page=User&amp;userID={@$event->additionalData.trashedByUserID}{@SID_ARG_2ND}">{$event->additionalData.trashedByUsername}</a>]]></item>
+		<item name="wbb.postEdit.notification.trashed.medium"><![CDATA[<a href="{@$event->getObject()->getURL()}{@SID_ARG_2ND}">Post</a> in thread <a href="index.php?page=Thread&amp;threadID={@$event->additionalData.threadID}{@SID_ARG_2ND}">{$event->additionalData.threadTopic}</a> deleted by <a href="index.php?page=User&amp;userID={@$event->additionalData.trashedByUserID}{@SID_ARG_2ND}">{$event->additionalData.trashedByUsername}</a>]]></item>
+		<item name="wbb.postEdit.notification.trashed.userMessages"><![CDATA[Your <a href="{@$event->getObject()->getURL()}{@SID_ARG_2ND}">post</a> in thread <a href="index.php?page=Thread&amp;threadID={@$event->additionalData.threadID}{@SID_ARG_2ND}">{$event->additionalData.threadTopic}</a> has been deleted by user <a href="index.php?page=User&amp;userID={@$event->additionalData.trashedByUserID}{@SID_ARG_2ND}">{$event->additionalData.trashedByUsername}</a>.]]></item>
+		<item name="wbb.postEdit.notification.trashed.mail"><![CDATA[Hello {@$user->username},
+one of your posts in thread {@$event->additionalData.threadTopic} has been deleted by user {@$event->additionalData.trashedByUsername}.
+{if $event->additionalData.trashReason != ''}The reason for deletion is: {@$event->additionalData.trashReason}{/if}
+
+Follow this link to view the deleted post: {@$pageURL}{@$event->getObject()->getURL()}]]></item>
+		<item name="wbb.postEdit.notification.trashed.pm"><![CDATA[Hello {@$user->username},
+one of your [url='{@$event->getObject()->getURL()}']posts[/url] in thread [url='index.php?page=Thread&threadID={@$event->additionalData.threadID}']{@$event->additionalData.threadTopic}[/url] has been deleted by user [url='index.php?page=User&userID={$event->additionalData.trashedByUserID}']{@$event->additionalData.trashedByUsername}[/url].
+{if $event->additionalData.trashReason != ''}The reason for deletion is: {@$event->additionalData.trashReason}{/if}]]></item>
+		<item name="wbb.postEdit.notification.deleted"><![CDATA[One of your posts in thread <a href="index.php?page=Thread&amp;threadID={@$event->additionalData.threadID}{@SID_ARG_2ND}">{$event->additionalData.threadTopic}</a> has been deleted completely by user <a href="index.php?page=User&amp;userID={@$event->additionalData.deletedByUserID}{@SID_ARG_2ND}">{$event->additionalData.deletedByUsername}</a>.]]></item>
+		<item name="wbb.postEdit.notification.deleted.accept"><![CDATA[Confirm]]></item>
+		<item name="wbb.postEdit.notification.deleted.title"><![CDATA[Post deleted completely]]></item>
+		<item name="wbb.postEdit.notification.deleted.description"><![CDATA[You will receive a notification if someone deletes one of your posts completely.]]></item>
+		<item name="wbb.postEdit.notification.deleted.short"><![CDATA[<a href="{@$event->getObject()->getURL()}{@SID_ARG_2ND}">Post</a> deleted completely by <a href="index.php?page=User&amp;userID={@$event->additionalData.deletedByUserID}{@SID_ARG_2ND}">{$event->additionalData.deletedByUsername}</a>]]></item>
+		<item name="wbb.postEdit.notification.deleted.medium"><![CDATA[<a href="{@$event->getObject()->getURL()}{@SID_ARG_2ND}">Post</a> in thread <a href="index.php?page=Thread&amp;threadID={@$event->additionalData.threadID}{@SID_ARG_2ND}">{$event->additionalData.threadTopic}</a> deleted completely by <a href="index.php?page=User&amp;userID={@$event->additionalData.deletedByUserID}{@SID_ARG_2ND}">{$event->additionalData.deletedByUsername}</a>]]></item>
+		<item name="wbb.postEdit.notification.deleted.userMessages"><![CDATA[One of your posts in thread <a href="index.php?page=Thread&amp;threadID={@$event->additionalData.threadID}{@SID_ARG_2ND}">{$event->additionalData.threadTopic}</a> has been deleted completely by user <a href="index.php?page=User&amp;userID={@$event->additionalData.deletedByUserID}{@SID_ARG_2ND}">{$event->additionalData.deletedByUsername}</a>.]]></item>
+		<item name="wbb.postEdit.notification.deleted.mail"><![CDATA[Hello {@$user->username},
+one of your posts in thread {@$event->additionalData.threadTopic} has been deleted completely by user {@$event->additionalData.deletedByUsername}.]]></item>
+		<item name="wbb.postEdit.notification.deleted.pm"><![CDATA[Hello {@$user->username},
+on of your posts in thread [url='index.php?page=Thread&threadID={@$event->additionalData.threadID}']{@$event->additionalData.threadTopic}[/url] has been deleted completely by user [url='index.php?page=User&userID={$event->additionalData.deletedByUserID}']{@$event->additionalData.deletedByUsername}[/url].]]></item>
+	</category>
+</language>

@@ -4,23 +4,31 @@
 		<item name="wcf.user.notification.object.type.postDelete"><![CDATA[Beitragslöschungen]]></item>                
 	</category>
 	<category name="wbb.postEdit">
-		<item name="wbb.postEdit.notification.trashed"><![CDATA[wbb.postEdit.notification.trashed]]></item>
+		<item name="wbb.postEdit.notification.trashed"><![CDATA[Ihr <a href="{@$event->getObject()->getURL()}{@SID_ARG_2ND}">Beitrag</a> im Thema <a href="index.php?page=Thread&amp;threadID={@$event->additionalData.threadID}{@SID_ARG_2ND}">{$event->additionalData.threadTopic}</a> wurde vom Benutzer <a href="index.php?page=User&amp;userID={@$event->additionalData.trashedByUserID}{@SID_ARG_2ND}">{$event->additionalData.trashedByUsername}</a> gelöscht.]]></item>
 		<item name="wbb.postEdit.notification.trashed.accept"><![CDATA[Bestätigen]]></item>
-		<item name="wbb.postEdit.notification.trashed.title"><![CDATA[wbb.postEdit.notification.trashed.title]]></item>
-		<item name="wbb.postEdit.notification.trashed.description"><![CDATA[Sie erhalten eine neue Benachrichtigung, wenn jemand einen Ihrer Beiträge in den Papierkorb legt.]]></item>
-		<item name="wbb.postEdit.notification.trashed.short"><![CDATA[wbb.postEdit.notification.trashed.short]]></item>
-		<item name="wbb.postEdit.notification.trashed.medium"><![CDATA[wbb.postEdit.notification.trashed.medium]]></item>
-		<item name="wbb.postEdit.notification.trashed.userMessages"><![CDATA[wbb.postEdit.notification.trashed.userMessages]]></item>
-		<item name="wbb.postEdit.notification.trashed.mail"><![CDATA[wbb.postEdit.notification.trashed.mail]]></item>
-		<item name="wbb.postEdit.notification.trashed.pm"><![CDATA[wbb.postEdit.notification.trashed.pm]]></item>
-		<item name="wbb.postEdit.notification.deleted"><![CDATA[wbb.postEdit.notification.deleted]]></item>
+		<item name="wbb.postEdit.notification.trashed.title"><![CDATA[Beitrag gelöscht]]></item>
+		<item name="wbb.postEdit.notification.trashed.description"><![CDATA[Sie erhalten eine neue Benachrichtigung, wenn jemand einen Ihrer Beiträge löscht.]]></item>
+		<item name="wbb.postEdit.notification.trashed.short"><![CDATA[<a href="{@$event->getObject()->getURL()}{@SID_ARG_2ND}">Beitrag</a> von <a href="index.php?page=User&amp;userID={@$event->additionalData.trashedByUserID}{@SID_ARG_2ND}">{$event->additionalData.trashedByUsername}</a> gelöscht]]></item>
+		<item name="wbb.postEdit.notification.trashed.medium"><![CDATA[<a href="{@$event->getObject()->getURL()}{@SID_ARG_2ND}">Beitrag</a> im Thema <a href="index.php?page=Thread&amp;threadID={@$event->additionalData.threadID}{@SID_ARG_2ND}">{$event->additionalData.threadTopic}</a> von <a href="index.php?page=User&amp;userID={@$event->additionalData.trashedByUserID}{@SID_ARG_2ND}">{$event->additionalData.trashedByUsername}</a> gelöscht]]></item>
+		<item name="wbb.postEdit.notification.trashed.userMessages"><![CDATA[Ihr <a href="{@$event->getObject()->getURL()}{@SID_ARG_2ND}">Beitrag</a> im Thema <a href="index.php?page=Thread&amp;threadID={@$event->additionalData.threadID}{@SID_ARG_2ND}">{$event->additionalData.threadTopic}</a> wurde vom Benutzer <a href="index.php?page=User&amp;userID={@$event->additionalData.trashedByUserID}{@SID_ARG_2ND}">{$event->additionalData.trashedByUsername}</a> gelöscht.]]></item>
+		<item name="wbb.postEdit.notification.trashed.mail"><![CDATA[Hallo {@$user->username},
+einer Ihrer Beitrage im Thema {@$event->additionalData.threadTopic} wurde vom Benutzer {@$event->additionalData.trashedByUsername} gelöscht.
+{if $event->additionalData.trashReason != ''}Der Grund für die Löschung lautet: {@$event->additionalData.trashReason}{/if}
+
+Mit diesem Link gelangen Sie direkt zum gelöschten Beitrag: {@$pageURL}{@$event->getObject()->getURL()}]]></item>
+		<item name="wbb.postEdit.notification.trashed.pm"><![CDATA[Hallo {@$user->username},
+einer Ihrer [url='{@$event->getObject()->getURL()}']Beitrage[/url] im Thema [url='index.php?page=Thread&threadID={@$event->additionalData.threadID}']{@$event->additionalData.threadTopic}[/url] wurde vom Benutzer [url='index.php?page=User&userID={$event->additionalData.trashedByUserID}']{@$event->additionalData.trashedByUsername}[/url] gelöscht.
+{if $event->additionalData.trashReason != ''}Der Grund für die Löschung lautet: {@$event->additionalData.trashReason}{/if}]]></item>
+		<item name="wbb.postEdit.notification.deleted"><![CDATA[Einer Ihrer Beiträge im Thema <a href="index.php?page=Thread&amp;threadID={@$event->additionalData.threadID}{@SID_ARG_2ND}">{$event->additionalData.threadTopic}</a> wurde vom Benutzer <a href="index.php?page=User&amp;userID={@$event->additionalData.deletedByUserID}{@SID_ARG_2ND}">{$event->additionalData.deletedByUsername}</a> endgültig gelöscht.]]></item>
 		<item name="wbb.postEdit.notification.deleted.accept"><![CDATA[Bestätigen]]></item>
-		<item name="wbb.postEdit.notification.deleted.title"><![CDATA[wbb.postEdit.notification.deleted.title]]></item>
+		<item name="wbb.postEdit.notification.deleted.title"><![CDATA[Beitrag endgültig gelöscht]]></item>
 		<item name="wbb.postEdit.notification.deleted.description"><![CDATA[Sie erhalten eine neue Benachrichtigung, wenn jemand einen Ihrer Beiträge endgültig löscht.]]></item>
-		<item name="wbb.postEdit.notification.deleted.short"><![CDATA[wbb.postEdit.notification.deleted.short]]></item>
-		<item name="wbb.postEdit.notification.deleted.medium"><![CDATA[wbb.postEdit.notification.deleted.medium]]></item>
-		<item name="wbb.postEdit.notification.deleted.userMessages"><![CDATA[wbb.postEdit.notification.deleted.userMessages]]></item>
-		<item name="wbb.postEdit.notification.deleted.mail"><![CDATA[wbb.postEdit.notification.deleted.mail]]></item>
-		<item name="wbb.postEdit.notification.deleted.pm"><![CDATA[wbb.postEdit.notification.deleted.pm]]></item>
+		<item name="wbb.postEdit.notification.deleted.short"><![CDATA[<a href="{@$event->getObject()->getURL()}{@SID_ARG_2ND}">Beitrag</a> von <a href="index.php?page=User&amp;userID={@$event->additionalData.deletedByUserID}{@SID_ARG_2ND}">{$event->additionalData.deletedByUsername}</a> endgültig gelöscht]]></item>
+		<item name="wbb.postEdit.notification.deleted.medium"><![CDATA[<a href="{@$event->getObject()->getURL()}{@SID_ARG_2ND}">Beitrag</a> im Thema <a href="index.php?page=Thread&amp;threadID={@$event->additionalData.threadID}{@SID_ARG_2ND}">{$event->additionalData.threadTopic}</a> von <a href="index.php?page=User&amp;userID={@$event->additionalData.deletedByUserID}{@SID_ARG_2ND}">{$event->additionalData.deletedByUsername}</a> endgültig gelöscht]]></item>
+		<item name="wbb.postEdit.notification.deleted.userMessages"><![CDATA[Einer Ihrer Beiträge im Thema <a href="index.php?page=Thread&amp;threadID={@$event->additionalData.threadID}{@SID_ARG_2ND}">{$event->additionalData.threadTopic}</a> wurde vom Benutzer <a href="index.php?page=User&amp;userID={@$event->additionalData.deletedByUserID}{@SID_ARG_2ND}">{$event->additionalData.deletedByUsername}</a> endgültig gelöscht.]]></item>
+		<item name="wbb.postEdit.notification.deleted.mail"><![CDATA[Hallo {@$user->username},
+einer Ihrer Beitrage im Thema {@$event->additionalData.threadTopic} wurde vom Benutzer {@$event->additionalData.deletedByUsername} endgültig gelöscht.]]></item>
+		<item name="wbb.postEdit.notification.deleted.pm"><![CDATA[Hallo {@$user->username},
+einer Ihrer Beitrage im Thema [url='index.php?page=Thread&threadID={@$event->additionalData.threadID}']{@$event->additionalData.threadTopic}[/url] wurde vom Benutzer [url='index.php?page=User&userID={$event->additionalData.deletedByUserID}']{@$event->additionalData.deletedByUsername}[/url] endgültig gelöscht.]]></item>
 	</category>
 </language>
