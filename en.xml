@@ -17,7 +17,7 @@ one of your posts in thread {@$event->additionalData.threadTopic} has been delet
 
 Follow this link to view the deleted post: {@$pageURL}{@$event->getObject()->getURL()}]]></item>
 		<item name="wbb.postEdit.notification.trashed.pm"><![CDATA[Hello {@$user->username},
-one of your [url='{@$event->getObject()->getURL()}']posts[/url] in thread [url='index.php?page=Thread&threadID={@$event->additionalData.threadID}']{@$event->additionalData.threadTopic}[/url] has been deleted by user [url='index.php?page=User&userID={$event->additionalData.trashedByUserID}']{@$event->additionalData.trashedByUsername}[/url].
+one of your [url='{@$pageURL}{@$event->getObject()->getURL()}']posts[/url] in thread [url='{@$pageURL}/index.php?page=Thread&threadID={@$event->additionalData.threadID}']{@$event->additionalData.threadTopic}[/url] has been deleted by user [url='{@$pageURL}/index.php?page=User&userID={$event->additionalData.trashedByUserID}']{@$event->additionalData.trashedByUsername}[/url].
 {if $event->additionalData.trashReason != ''}The reason for deletion is: {@$event->additionalData.trashReason}{/if}]]></item>
 		<item name="wbb.postEdit.notification.deleted"><![CDATA[One of your posts in thread <a href="index.php?page=Thread&amp;threadID={@$event->additionalData.threadID}{@SID_ARG_2ND}">{$event->additionalData.threadTopic}</a> has been deleted completely by user <a href="index.php?page=User&amp;userID={@$event->additionalData.deletedByUserID}{@SID_ARG_2ND}">{$event->additionalData.deletedByUsername}</a>.]]></item>
 		<item name="wbb.postEdit.notification.deleted.accept"><![CDATA[Confirm]]></item>
@@ -29,6 +29,6 @@ one of your [url='{@$event->getObject()->getURL()}']posts[/url] in thread [url='
 		<item name="wbb.postEdit.notification.deleted.mail"><![CDATA[Hello {@$user->username},
 one of your posts in thread {@$event->additionalData.threadTopic} has been deleted completely by user {@$event->additionalData.deletedByUsername}.]]></item>
 		<item name="wbb.postEdit.notification.deleted.pm"><![CDATA[Hello {@$user->username},
-on of your posts in thread [url='index.php?page=Thread&threadID={@$event->additionalData.threadID}']{@$event->additionalData.threadTopic}[/url] has been deleted completely by user [url='index.php?page=User&userID={$event->additionalData.deletedByUserID}']{@$event->additionalData.deletedByUsername}[/url].]]></item>
+on of your posts in thread [url='{@$pageURL}/index.php?page=Thread&threadID={@$event->additionalData.threadID}']{@$event->additionalData.threadTopic}[/url] has been deleted completely by user [url='{@$pageURL}/index.php?page=User&userID={$event->additionalData.deletedByUserID}']{@$event->additionalData.deletedByUsername}[/url].]]></item>
 	</category>
 </language>
