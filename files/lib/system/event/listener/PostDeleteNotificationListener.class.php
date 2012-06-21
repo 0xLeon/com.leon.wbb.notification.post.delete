@@ -178,8 +178,6 @@ class PostDeleteNotificationListener implements EventListener {
 						'threadID' => $eventObj->thread->threadID,
 						'threadTopic' => $eventObj->thread->topic
 					));
-					
-					return true;
 				}
 				else if (!$eventObj->post->isDeleted && THREAD_ENABLE_RECYCLE_BIN && $eventObj->board->getModeratorPermission('canDeletePost')) {
 					NotificationHandler::fireEvent('trashed', 'postDelete', $eventObj->post->postID, $eventObj->post->userID, array(
@@ -189,8 +187,6 @@ class PostDeleteNotificationListener implements EventListener {
 						'threadID' => $eventObj->thread->threadID,
 						'threadTopic' => $eventObj->thread->topic
 					));
-					
-					return true;
 				}
 			}
 		}
