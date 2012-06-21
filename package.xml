@@ -3,7 +3,7 @@
 	<packageinformation>
 		<packagename>Post Delete Notifications</packagename>
 		<packageurl><![CDATA[https://github.com/Leon-/com.leon.wbb.notification.post.delete]]></packageurl>
-		<version>1.0.0</version>
+		<version>1.0.1</version>
 		<date>2012-06-21</date>
 		<standalone>0</standalone>
 		<isunique>0</isunique>
@@ -29,5 +29,9 @@
 		<eventlistener>eventlistener.xml</eventlistener>
 		<notificationobjecttype>notificationobjecttype.xml</notificationobjecttype>
 		<notificationevent>notificationevent.xml</notificationevent>
+	</instructions>
+	<instructions type="update" fromversion="1.0.0">
+		<files>files.tar</files>
+		<eventlistener>eventlistener.xml</eventlistener>
 	</instructions>
 </package>
